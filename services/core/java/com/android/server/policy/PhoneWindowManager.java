@@ -4221,6 +4221,12 @@ public class PhoneWindowManager implements WindowManagerPolicy {
                 break;
             }
 
+            case KeyEvent.KEYCODE_HOME:
+                if (down && !interactive) {
+                    isWakeKey = true;
+                }
+                break;
+
             case KeyEvent.KEYCODE_POWER: {
                 EventLogTags.writeInterceptPower(
                         KeyEvent.actionToString(event.getAction()),
